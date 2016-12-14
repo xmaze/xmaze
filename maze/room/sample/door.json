@@ -1,0 +1,13 @@
+{
+  "maze": {
+    "door": [
+        {
+            "name": "demo",
+            "task": "1+1=?",
+            "key": "2",
+            "redirect": "/room/2",
+            "hint": "Try appending ?key=2 to the URL."
+        }
+    ]
+  }
+}
