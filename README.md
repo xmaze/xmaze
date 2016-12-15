@@ -3,9 +3,11 @@ A collaborative effort to create *structured data* about **secret, locked locati
 
 **To play:**
 
-Visit my maze at: [http://maze.mindey.com](http://x0n.mindey.com).
+Visit my maze at: [http://maze.mindey.com](http://maze.mindey.com).
 
 **To start your own:**
+Demo [youtube video](https://youtu.be/U2sRVHSqhGY), alternatively: [mp4 (13.5MB)](http://maze.mindey.com/room/main/video.mp4).
+
 ```
 git clone https://github.com/mindey/xmaze.git xmaze
 cd xmaze
