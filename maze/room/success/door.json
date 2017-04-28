@@ -1,0 +1,20 @@
+{
+  "maze": {
+    "door": [
+        {
+            "name": "is",
+            "task": "1+2=?",
+            "key": "3",
+            "redirect": "/room/sample",
+            "hint": "Try appending ?key=3 to the URL."
+        },
+        {
+            "name": "this",
+            "task": "2+2=?",
+            "key": "4",
+            "redirect": "https://mindey.com",
+            "hint": "Try appending ?key=4 to the URL."
+        }
+    ]
+  }
+}

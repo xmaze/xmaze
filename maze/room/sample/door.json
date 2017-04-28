@@ -5,7 +5,7 @@
             "name": "demo",
             "task": "1+1=?",
             "key": "2",
-            "redirect": "https://mindey.com",
+            "redirect": "/room/success",
             "hint": "Try appending ?key=2 to the URL."
         }
     ]
