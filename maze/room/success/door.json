@@ -12,7 +12,7 @@
             "name": "this",
             "task": "2+2=?",
             "key": "4",
-            "redirect": "https://mindey.com",
+            "redirect": "https://github.com/mindey/xmaze",
             "hint": "Try appending ?key=4 to the URL."
         }
     ]
