@@ -1,11 +1,11 @@
 <?php
-// For the rooms, we need urls to end with "/".
+
 $url = strtok($_SERVER['REQUEST_URI'], '?');
 if (substr($url, -1) != '/') {
     header('Location: '.$url.'/');
 }
 
-// generate/update the dummy door folders for the room.
+
 if (!file_exists('./door')) {
     mkdir('./door', 0777, true);
 }
@@ -15,7 +15,7 @@ $data = json_decode(file_get_contents('./door.json'), true);
 $door_list = $data['maze']['door'];
 $door_names = array();
 
-// add folders that are in the door.json
+
 foreach ($door_list as &$value) {
     $door_name = $value['name'];
     array_push($door_names, $door_name);
@@ -31,11 +31,11 @@ foreach ($door_list as &$value) {
     }
 }
 
-// remove folders that are not in door.json
+
 $directories = glob('./door/*', GLOB_ONLYDIR);
 
 foreach ($directories as $key => $value) {
-    // $directory_name = substr($value, 2);
+
     $segments = explode('/', $value);
     $directory_name = $segments[count($segments)-1];
     
@@ -53,7 +53,7 @@ foreach ($directories as $key => $value) {
 <!-- ROOM STYLE -->
 <body onload="xmaze('/static/default')">
 
-<div id="x0n">
+<div id="zone">
 <?php echo json_encode($room); ?>
 </div>
 

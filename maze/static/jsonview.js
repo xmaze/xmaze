@@ -1,33 +1,13 @@
-/*
- * ViewJSON
- * Version 1.0
- * A Google Chrome extension to display JSON in a user-friendly format
- *
- * This is a chromeified version of the JSONView Firefox extension by Ben Hollis: 
- * http://jsonview.com 
- * http://code.google.com/p/jsonview
- *
- * Also based on the XMLTree Chrome extension by Moonty & alan.stroop
- * https://chrome.google.com/extensions/detail/gbammbheopgpmaagmckhpjbfgdfkpadb
- *
- * port by Jamie Wilkinson (@jamiew) | http://jamiedubs.com | http://github.com/jamiew
- * MIT license / copyfree (f) F.A.T. Lab http://fffff.at
- * Speed Project Approved: 2h
-*/
-
 function xmaze(style){
 
-  // In case the style is not defined, just give the default one.
   style = typeof style !== 'undefined' ? style : 'default';
 
-  this.data = document.getElementById('x0n').innerHTML; //body.innerHTML;
+  this.data = document.getElementById('zone').innerHTML;
   this.uri = document.location.href;
 
-  // Remove new lines before checking.
   this.data = this.data.replace(/\n|\r/g, "")
     
-  // Test if what remains is JSON or JSONp
-  var json_regex = /^\s*([\[\{].*[\}\]])\s*$/; // Ghetto, but it works
+  var json_regex = /^\s*([\[\{].*[\}\]])\s*$/;
   var jsonp_regex = /^[\s\u200B\uFEFF]*([\w$\[\]\.]+)[\s\u200B\uFEFF]*\([\s\u200B\uFEFF]*([\[{][\s\S]*[\]}])[\s\u200B\uFEFF]*\);?[\s\u200B\uFEFF]*$/;
   var is_json = json_regex.test(this.data);
   var is_jsonp = jsonp_regex.test(this.data);
@@ -37,11 +17,8 @@ function xmaze(style){
   if(is_json || is_jsonp){
      
     console.log("JSONView: sexytime!");
-
-    // JSONFormatter json->HTML prototype straight from Firefox JSONView
-    // For reference: http://code.google.com/p/jsonview
+   
     function JSONFormatter() {
-      // No magic required.
     }
     JSONFormatter.prototype = {
       htmlEncode: function (t) {
@@ -52,7 +29,7 @@ function xmaze(style){
         return '<span class="' + className + '">' + this.htmlEncode(value) + '</span>';
       },
 
-      // Convert a basic JSON datatype (number, string, boolean, null, object, array) into an HTML fragment.
+
       valueToHTML: function(value) {
         var valueType = typeof value;
 
@@ -84,7 +61,7 @@ function xmaze(style){
         return output;
       },
 
-      // Convert an array into an HTML fragment
+
       arrayToHTML: function(json) {
         var output = '[<ul class="array collapsible">';
         var hasContents = false;
@@ -103,7 +80,7 @@ function xmaze(style){
         return output;
       },
 
-      // Convert a JSON object to an HTML fragment
+
       objectToHTML: function(json) {
         var output = '{<ul class="obj collapsible">';
         var hasContents = false;
@@ -123,7 +100,7 @@ function xmaze(style){
         return output;
       },
 
-      // Convert a whole JSON object into a formatted HTML document.
+
       jsonToHTML: function(json, callback, uri) {
         var output = '';
         if( callback ){
@@ -140,17 +117,16 @@ function xmaze(style){
         return this.toHTML(output, uri);
       },
 
-      // Produce an error document for when parsing fails.
+
       errorPage: function(error, data, uri) {
-        // var output = '<div id="error">' + this.stringbundle.GetStringFromName('errorParsing') + '</div>';
-        // output += '<h1>' + this.stringbundle.GetStringFromName('docContents') + ':</h1>';
+
         var output = '<div id="error">Error parsing JSON: '+error.message+'</div>';
         output += '<h1>'+error.stack+':</h1>';      
         output += '<div id="json">' + this.htmlEncode(data) + '</div>';
         return this.toHTML(output, uri + ' - Error');
       },
 
-      // Wrap the HTML fragment in a full document. Used by jsonToHTML and errorPage.
+
       toHTML: function(content, title) {
         return '<doctype html>' + 
           '<html><head><title>' + title + '</title>' +
@@ -163,11 +139,11 @@ function xmaze(style){
     };
 
 
-    // Sanitize & output -- all magic from JSONView Firefox
+
     this.jsonFormatter = new JSONFormatter();
-    // This will miss anything that has comments, or more than one callback, or requires modification before use.
+
     var outputDoc = '';
-    // text = text.match(jsonp_regex)[1]; 
+
     var cleanData = '',
         callback = '';
 
@@ -182,9 +158,9 @@ function xmaze(style){
     }
     console.log(cleanData);
     
-    // Covert, and catch exceptions on failure
+
     try {
-      // var jsonObj = this.nativeJSON.decode(cleanData);
+
       var jsonObj = JSON.parse(cleanData);
       if ( jsonObj ) {        
         outputDoc = this.jsonFormatter.jsonToHTML(jsonObj, callback, this.uri);

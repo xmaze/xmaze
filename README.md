@@ -21,11 +21,11 @@ and visit [localhost:8000](http://localhost:8000) on your machine. Once satisfie
 rsync -aPzr /path/to/xmaze/maze/* --rsh='ssh -p22' user@host:/path/to/public_html/
 ```
 
-A version of ThreeJS is included, for anyone who later would like to think how to use the data to provide the enhanced experience navigating ``X0N``.
+Note: if you get a long waiting under redirect, it might be that your pgae doesn't exist.
 
 ## Secret Locked Locations
 
-The goal is to introduce content to learners, students, etc. by enciting them to solve problems in order to reveal secrets. I call the format for rooms and doors between them, defining a maze, an ``X0N`` -- a ``JSON`` to ``search X``. Below is the beginning for a schema definition for secret locked locations.
+The goal is to introduce content to learners, students, etc. by enciting them to solve problems in order to reveal secrets. I call the format for rooms and doors between them, defining a maze, a ``zone``. Below is the beginning for a schema definition for secret locked locations.
 
 **room**
 ```{json}

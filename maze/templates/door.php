@@ -28,7 +28,7 @@ else { ?>
 <!-- DOOR STYLE -->
 <body onload="xmaze('/static/default')">
 
-<div id="x0n">
+<div id="zone">
 <?php 
     // Remove the answer.
     unset($door['name']);

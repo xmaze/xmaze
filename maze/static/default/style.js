@@ -1,6 +1,5 @@
-// This used to use jQuery, but was rewritten in plan DOM for speed and to get rid of the jQuery dependency.
 document.addEventListener('DOMContentLoaded', function() {
-  // Click handler for collapsing and expanding objects and arrays
+
   function collapse(evt) {
     var collapser = evt.target;
    
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function addCollapser(item) {
-    // This mainly filters out the root object (which shouldn't be collapsible)
+
     if ( item.nodeName != 'LI' ) {
       return;
     }
