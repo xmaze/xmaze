@@ -12,7 +12,7 @@ Demo [youtube video](https://youtu.be/U2sRVHSqhGY), alternatively: [mp4 (13.5MB)
 ```
 git clone https://github.com/mindey/xmaze.git xmaze
 cd xmaze
-php -S localhost:8000 -t maze
+php -S localhost:8000 -t maze maze/route.php
 ```
 and visit [localhost:8000](http://localhost:8000) on your machine. Once satisfied, just sync it with some domain where PHP is available, for example, by:
 
