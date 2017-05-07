@@ -23,6 +23,14 @@ rsync -aPzr /path/to/xmaze/maze/* --rsh='ssh -p22' user@host:/path/to/public_htm
 
 Note: if you get a long waiting under redirect, it might be that your pgae doesn't exist.
 
+Note: you might need to add the following **.htaccess** file to directory:
+```
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L] 
+```
+
 ## Secret Locked Locations
 
 The goal is to introduce content to learners, students, etc. by enciting them to solve problems in order to reveal secrets. I call the format for rooms and doors between them, defining a maze, a ``zone``. Below is the beginning for a schema definition for secret locked locations.
