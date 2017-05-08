@@ -9,12 +9,21 @@ function reload() {
 }
 
 function redirect($redirect) {
-    header("Location: " . $redirect . "/");
+    header("Location: " . $redirect);
+}
+
+function refresh() {
+    header("Location: " . $_SERVER["REQUEST_URI"] . "?format=json");
 }
 
 $routing = new Routing();
 $rooms = new Rooms();
 $template = new Template();
+
+$tokens = $routing->getUriTokens();
+if (!isset($tokens["format"]) || $tokens["format"] !== "json") {
+    refresh();
+}
 
 $routes = $routing->getRoutesArray();
 if ($routes[0] !== "room" || (isset($routes[2]) && $routes[2] !== "door") ) {
@@ -32,7 +41,6 @@ if (isset($routes[2])) {
     if (empty($door)) {
         reload();
     }
-    $tokens = $routing->getUriTokens();
     if (isset($tokens["key"])) {
         $answer = $rooms->checkAnswer($tokens["key"], $door);
         if ($rooms->checkAnswer($tokens["key"], $door)) {
