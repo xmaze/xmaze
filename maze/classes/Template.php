@@ -5,14 +5,19 @@ class Template {
     
     public function styleRoom($room, $doors) {
         $style = array(
-            "maze" => array(
-                "room" => array(),
-                "hint" => $room[0]->hint
+            "room" => array(
+                "doors" => array()
             )
         );
         
+        foreach($room[0] as $key => $val) {
+            if (!in_array($key, ["name", "doors"])) {
+                $style["room"][$key] = $val;
+            }
+        }
+        
         foreach ($doors as $door) {
-            array_push($style["maze"]["room"], "./door/" . $door->name);
+            array_push($style["room"]["doors"], "./door/" . $door->name);
         }        
 
         return $style;
@@ -20,13 +25,15 @@ class Template {
 
     public function styleDoor($door) {
         $door = $door[0];
+        $door_properties = array();
+
+        foreach ($door as $key => $val) {
+            if (!in_array($key, ["name", "key", "redirect"])) {
+                $door_properties[$key] = $val;
+            }
+        }
         $style = array(
-            "maze" => array(
-                "door" => (object) array(
-                    "task" => $door->task,
-                    "hint" => $door->hint
-                )
-            )
+            "door" => (object) $door_properties
         );
         
         return $style;
