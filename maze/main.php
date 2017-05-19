@@ -28,6 +28,7 @@ if (empty($room)) {
 
 $doors = $room[0]->doors;
 $tokens = $routing->getUriTokens();
+$format = isset($tokens["format"]) ? $tokens["format"] : null;
 
 if (isset($routes[2])) {
     $door = $rooms->getDoor($routes, $doors);
@@ -42,11 +43,10 @@ if (isset($routes[2])) {
     }
     $result = $template->styleDoor($door);
 } else {
-    $result = $template->styleRoom($room, $doors);
+    $result = $template->styleRoom($room, $doors, $format);
 }
 
 
-$format = isset($tokens["format"]) ? $tokens["format"] : null;
 
 if ($format === "json") {
     header('Content-Type: application/json');
