@@ -2,56 +2,197 @@
     "rooms": [
         {
             "name": "sample",
-            "hint": "try to enter door",
+            "seq": ["up", "down", "left", "right", "back", "forward"],
             "doors": [
                 {
-                    "name": "demo",
+                    "name": "red",
                     "task": "1+1=?",
                     "key": "2",
-                    "redirect": "/room/success",
-                    "hint": "Try appending ?key=2 to the URL."
+                    "redirect": "/room/redhouse"
                 },
                 {
-                    "name": "test",
-                    "task": "1+4=?",
+                    "name": "green",
+                    "task": "2+1=?",
+                    "key": "3",
+                    "redirect": "/room/greenhouse"
+                },
+                {
+                    "name": "blue",
+                    "task": "2+3=?",
                     "key": "5",
-                    "redirect": "/room/test",
-                    "hint": "Try appending ?key=5 to the URL."
+                    "redirect": "/room/bluehouse"
+                },
+                {
+                    "name": "yellow",
+                    "task": "3+5=?",
+                    "key": "8",
+                    "redirect": "/room/yellowhouse"
+                },
+                {
+                    "name": "orange",
+                    "task": "5+8=?",
+                    "key": "13",
+                    "redirect": "/room/orangehouse"
+                },
+                {
+                    "name": "violet",
+                    "task": "8+13=?",
+                    "key": "21",
+                    "redirect": "/room/violethouse"
                 }
             ]
         },
         {
-            "name": "success",
-            "hint": "You had successfully arrived~!",
+            "name": "redhouse",
+            "seq": ["down"],
             "doors": [
                 {
-                    "name": "is",
-                    "task": "1+2=?",
-                    "key": "3",
-                    "redirect": "/room/sample",
-                    "hint": "Try appending ?key=3 to the URL."
-                },
+                    "name": "redhouse",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+
+
+        {
+            "name": "greenhouse",
+            "seq": ["up", "left", "right", "back", "forward"],
+            "doors": [
                 {
-                    "name": "this",
+                    "name": "samplehouse",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                },
+
+
+                {
+                    "name": "serenehouse",
                     "task": "2+2=?",
                     "key": "4",
-                    "redirect": "https://github.com/mindey/xmaze",
-                    "hint": "Try appending ?key=4 to the URL."
+                    "redirect": "/room/serene"
+                },
+                {
+                    "name": "starshiphouse",
+                    "task": "3+3=?",
+                    "key": "6",
+                    "redirect": "/room/starship"
+                },
+                {
+                    "name": "discohouse",
+                    "task": "4+4=?",
+                    "key": "8",
+                    "redirect": "/room/disco"
+                },
+                {
+                    "name": "frosthouse",
+                    "task": "5+5=?",
+                    "key": "10",
+                    "redirect": "/room/frost"
                 }
             ]
         },
         {
-            "name": "test",
-            "hint": "try to enter door",
+            "name": "bluehouse",
+            "seq": ["right"],
             "doors": [
                 {
-                    "name": "are",
-                    "task": "5+1=?",
+                    "name": "samplehouse",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+        {
+            "name": "yellowhouse",
+            "seq": ["left"],
+            "doors": [
+                {
+                    "name": "samplehouse",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+        {
+            "name": "orangehouse",
+            "seq": ["forward"],
+            "doors": [
+                {
+                    "name": "samplehouse",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+        {
+            "name": "violethouse",
+            "seq": ["back"],
+            "doors": [
+                {
+                    "name": "samplehouse",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+
+
+        {
+            "name": "serenehouse",
+            "seq": ["right"],
+            "doors": [
+                {
+                    "name": "greenhouse",
+                    "task": "2+2=?",
+                    "key": "4",
+                    "redirect": "/room/green"
+                }
+            ]
+        },
+        {
+            "name": "starshiphouse",
+            "seq": ["left"],
+            "doors": [
+                {
+                    "name": "greenhouse",
+                    "task": "3+3=?",
                     "key": "6",
-                    "redirect": "https://github.com/javraindawn",
-                    "hint": "Try appending ?key=6 to the URL."
+                    "redirect": "/room/green"
+                }
+            ]
+        },
+        {
+            "name": "discohouse",
+            "seq": ["forward"],
+            "doors": [
+                {
+                    "name": "greenhouse",
+                    "task": "4+4=?",
+                    "key": "8",
+                    "redirect": "/room/green"
+                }
+            ]
+        },
+        {
+            "name": "frosthouse",
+            "seq": ["back"],
+            "doors": [
+                {
+                    "name": "greenhouse",
+                    "task": "5+5=?",
+                    "key": "10",
+                    "redirect": "/room/green"
                 }
             ]
         }
+
+
     ]
 }
