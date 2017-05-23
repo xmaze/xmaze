@@ -9,7 +9,7 @@ function reload() {
 }
 
 function redirect($redirect) {
-    header("Location: " . $redirect . "/");
+    header("Location: " . $redirect);
 }
 
 $routing = new Routing();
@@ -38,7 +38,12 @@ if (isset($routes[2])) {
     if (isset($tokens["key"])) {
         $answer = $rooms->checkAnswer($tokens["key"], $door);
         if ($rooms->checkAnswer($tokens["key"], $door)) {
-            redirect($door[0]->redirect);
+            if ($format === "json") {
+                redirect($door[0]->redirect . "?format=json");
+            }
+            else {
+                redirect($door[0]->redirect  . "/");
+            }
         }
     }
     $result = $template->styleDoor($door);
