@@ -46,11 +46,19 @@ if (isset($routes[2])) {
             }
         }
     }
-    $result = $template->styleDoor($door);
+    if (!isset($answer)) {
+        $result = $template->styleDoor($door);
+    }
+    else if (!$answer) {
+        $result = array("result" => "answer incorrect");
+    }
+    else {
+        $result = $template->styleDoor($door);
+    }
+
 } else {
     $result = $template->styleRoom($room, $doors, $format);
 }
-
 
 
 if ($format === "json") {
