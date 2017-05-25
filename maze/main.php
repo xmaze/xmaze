@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 function __autoload($cn) {
     include_once "classes/" . $cn . ".php";
