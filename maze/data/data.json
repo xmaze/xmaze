@@ -72,8 +72,8 @@
                 },
                 {
                     "name": "tostar",
-                    "task": "-1+0=?",
-                    "key": "-1",
+                    "task": "1+0=?",
+                    "key": "1",
                     "redirect": "/room/star"
                 }
             ]
@@ -84,8 +84,8 @@
             "doors": [
                 {
                     "name": "tosun",
-                    "task": "-1+0=?",
-                    "key": "-1",
+                    "task": "1+0=?",
+                    "key": "1",
                     "redirect": "/room/sun"
                 }
             ]
