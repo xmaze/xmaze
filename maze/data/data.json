@@ -44,13 +44,49 @@
         },
         {
             "name": "redhouse",
-            "seq": ["down"],
+            "seq": ["down", "up"],
             "doors": [
                 {
                     "name": "redhouse",
                     "task": "1+1=?",
                     "key": "2",
                     "redirect": "/room/sample"
+                },
+                {
+                    "name": "sunhouse",
+                    "task": "0+0=?",
+                    "key": "0",
+                    "redirect": "/room/sun"
+                }
+            ]
+        },
+        {
+            "name": "sun",
+            "seq": ["down"],
+            "doors": [
+                {
+                    "name": "tored",
+                    "task": "0+0=?",
+                    "key": "0",
+                    "redirect": "/room/redhouse"
+                },
+                {
+                    "name": "tostar",
+                    "task": "-1+0=?",
+                    "key": "-1",
+                    "redirect": "/room/star"
+                }
+            ]
+        },
+        {
+            "name": "star",
+            "seq": ["down"],
+            "doors": [
+                {
+                    "name": "tosun",
+                    "task": "-1+0=?",
+                    "key": "-1",
+                    "redirect": "/room/sun"
                 }
             ]
         },
