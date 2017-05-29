@@ -62,7 +62,7 @@
         },
         {
             "name": "sun",
-            "seq": ["down"],
+            "seq": ["down", "up"],
             "doors": [
                 {
                     "name": "tored",
