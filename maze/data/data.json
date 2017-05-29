@@ -97,7 +97,7 @@
             "seq": ["up", "left", "right", "back", "forward"],
             "doors": [
                 {
-                    "name": "samplehouse",
+                    "name": "sample",
                     "task": "1+1=?",
                     "key": "2",
                     "redirect": "/room/sample"
@@ -105,28 +105,28 @@
 
 
                 {
-                    "name": "serenehouse",
+                    "name": "serene",
                     "task": "2+2=?",
                     "key": "4",
-                    "redirect": "/room/serene"
+                    "redirect": "/room/serenehouse"
                 },
                 {
-                    "name": "starshiphouse",
+                    "name": "starship",
                     "task": "3+3=?",
                     "key": "6",
-                    "redirect": "/room/starship"
+                    "redirect": "/room/starshiphouse"
                 },
                 {
-                    "name": "discohouse",
+                    "name": "disco",
                     "task": "4+4=?",
                     "key": "8",
-                    "redirect": "/room/disco"
+                    "redirect": "/room/discohouse"
                 },
                 {
-                    "name": "frosthouse",
+                    "name": "frost",
                     "task": "5+5=?",
                     "key": "10",
-                    "redirect": "/room/frost"
+                    "redirect": "/room/frosthouse"
                 }
             ]
         },
@@ -135,7 +135,7 @@
             "seq": ["right"],
             "doors": [
                 {
-                    "name": "samplehouse",
+                    "name": "sample",
                     "task": "1+1=?",
                     "key": "2",
                     "redirect": "/room/sample"
@@ -147,7 +147,7 @@
             "seq": ["left"],
             "doors": [
                 {
-                    "name": "samplehouse",
+                    "name": "sample",
                     "task": "1+1=?",
                     "key": "2",
                     "redirect": "/room/sample"
@@ -159,7 +159,7 @@
             "seq": ["forward"],
             "doors": [
                 {
-                    "name": "samplehouse",
+                    "name": "sample",
                     "task": "1+1=?",
                     "key": "2",
                     "redirect": "/room/sample"
@@ -171,7 +171,7 @@
             "seq": ["back"],
             "doors": [
                 {
-                    "name": "samplehouse",
+                    "name": "sample",
                     "task": "1+1=?",
                     "key": "2",
                     "redirect": "/room/sample"
@@ -185,10 +185,10 @@
             "seq": ["right"],
             "doors": [
                 {
-                    "name": "greenhouse",
+                    "name": "green",
                     "task": "2+2=?",
                     "key": "4",
-                    "redirect": "/room/green"
+                    "redirect": "/room/greenhouse"
                 }
             ]
         },
@@ -197,10 +197,10 @@
             "seq": ["left"],
             "doors": [
                 {
-                    "name": "greenhouse",
+                    "name": "green",
                     "task": "3+3=?",
                     "key": "6",
-                    "redirect": "/room/green"
+                    "redirect": "/room/greenhouse"
                 }
             ]
         },
@@ -209,10 +209,10 @@
             "seq": ["forward"],
             "doors": [
                 {
-                    "name": "greenhouse",
+                    "name": "green",
                     "task": "4+4=?",
                     "key": "8",
-                    "redirect": "/room/green"
+                    "redirect": "/room/greenhouse"
                 }
             ]
         },
@@ -221,10 +221,10 @@
             "seq": ["back"],
             "doors": [
                 {
-                    "name": "greenhouse",
+                    "name": "green",
                     "task": "5+5=?",
                     "key": "10",
-                    "redirect": "/room/green"
+                    "redirect": "/room/greenhouse"
                 }
             ]
         }
