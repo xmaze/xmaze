@@ -26,7 +26,7 @@ class Template {
                         $door_properties[$key] = $val;
 
                         if ($key === "name") {
-                            $door_properties["endpoint"] = "/" . $room[0]->name . "/door/" . $val;
+                            $door_properties["endpoint"] = "/room/" . $room[0]->name . "/door/" . $val;
                         }
                     }
                 }
