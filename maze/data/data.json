@@ -2,7 +2,6 @@
     "rooms": [
         {
             "name": "home",
-            "tex": "http://groovemechanic.net/three.js/examples/textures/roughness_map.jpg",
             "seq": ["up", "down", "left", "right", "back", "forward"],
             "doors": [
                 {
