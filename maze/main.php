@@ -6,7 +6,7 @@ function __autoload($cn) {
 }
 
 function reload() {
-    header("Location: /room/sample/");
+    header("Location: /room/home/");
 }
 
 function redirect($redirect) {
