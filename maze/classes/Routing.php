@@ -1,7 +1,7 @@
 <?php
-    
+
 class Routing {
-    
+
     protected $uri;
     protected $query_strings;
 
@@ -12,7 +12,7 @@ class Routing {
 
     public function getUriTokens() {
         $params = array();
-        if ($this->query_strings) 
+        if ($this->query_strings)
             parse_str($this->query_strings, $params);
         return $params;
     }
@@ -20,14 +20,14 @@ class Routing {
     public function getCurrentUri() {
         $uri = $this->uri;
 
-        if (strstr($this->uri, '?')) 
+        if (strstr($this->uri, '?'))
             $uri = substr($uri, 0, strpos($uri, '?'));
-		
+
         return trim($uri, '/');
-	}
+    }
 
     public function getRoutesArray() {
         return explode('/', $this->getCurrentUri());
     }
-    
+
 }

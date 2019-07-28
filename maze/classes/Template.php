@@ -1,21 +1,21 @@
 <?php
-    
+
 class Template {
     public function __construct() {}
-    
+
     public function styleRoom($room, $doors, $format) {
         $style = array(
             "room" => array(
                 "doors" => array()
             )
         );
-        
+
         foreach($room[0] as $key => $val) {
             if (!in_array($key, ["name", "doors"])) {
                 $style["room"][$key] = $val;
             }
         }
-        
+
         foreach ($doors as $door) {
 
             if ($format === "json") {
@@ -41,7 +41,7 @@ class Template {
             }
 
 
-        }        
+        }
 
         return $style;
     }
@@ -58,8 +58,8 @@ class Template {
         $style = array(
             "door" => (object) $door_properties
         );
-        
+
         return $style;
     }
-    
+
 }

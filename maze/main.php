@@ -66,13 +66,25 @@ if ($format === "json") {
     header('Content-Type: application/json');
     echo json_encode($result);
 } else {
+
+    // Display texture as background, if exists :)
+    $tex = NULL;
+    if (isset($result["room"])) {
+        $tex = $result["room"]["tex"];
+        unset($result["room"]["tex"]);
+    }
+    else if (isset($result["door"])) {
+        $tex = $result["door"]->tex;
+        unset($result["door"]->tex);
+    }
+
     echo "
         <html>
             <head>
                 <meta name='viewport' content='width=device-width'>
                 <script type='text/javascript' src='/static/jsonview.js'></script>
             </head>
-            <body onload=\"xmaze('/static/default')\">
+            <body onload=\"xmaze('/static/default')\" background=\"$tex\">
                 <div id='zone'>
                     " . json_encode($result) . "
                 </div>

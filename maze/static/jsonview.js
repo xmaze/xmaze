@@ -4,9 +4,8 @@ function xmaze(style){
 
   this.data = document.getElementById('zone').innerHTML;
   this.uri = document.location.href;
-
   this.data = this.data.replace(/\n|\r/g, "")
-    
+
   var json_regex = /^\s*([\[\{].*[\}\]])\s*$/;
   var jsonp_regex = /^[\s\u200B\uFEFF]*([\w$\[\]\.]+)[\s\u200B\uFEFF]*\([\s\u200B\uFEFF]*([\[{][\s\S]*[\]}])[\s\u200B\uFEFF]*\);?[\s\u200B\uFEFF]*$/;
   var is_json = json_regex.test(this.data);
@@ -15,9 +14,9 @@ function xmaze(style){
   console.log("JSONView: is_json="+is_json+" is_jsonp="+is_jsonp);
 
   if(is_json || is_jsonp){
-     
+
     console.log("JSONView: sexytime!");
-   
+
     function JSONFormatter() {
     }
     JSONFormatter.prototype = {
@@ -42,7 +41,7 @@ function xmaze(style){
         }
         else if (valueType == 'object') {
           output += this.objectToHTML(value);
-        } 
+        }
         else if (valueType == 'number') {
           output += this.decorateWithSpan(value, 'num');
         }
@@ -121,19 +120,19 @@ function xmaze(style){
       errorPage: function(error, data, uri) {
 
         var output = '<div id="error">Error parsing JSON: '+error.message+'</div>';
-        output += '<h1>'+error.stack+':</h1>';      
+        output += '<h1>'+error.stack+':</h1>';
         output += '<div id="json">' + this.htmlEncode(data) + '</div>';
         return this.toHTML(output, uri + ' - Error');
       },
 
 
       toHTML: function(content, title) {
-        return '<doctype html>' + 
+        return '<doctype html>' +
           '<html><head><title>' + title + '</title>' +
-          '<link rel="stylesheet" type="text/css" href="'+style+"/style.css"+'">' + 
-          '<script type="text/javascript" src="'+style+"/style.js"+'"></script>' + 
+          '<link rel="stylesheet" type="text/css" href="'+style+"/style.css"+'">' +
+          '<script type="text/javascript" src="'+style+"/style.js"+'"></script>' +
           '</head><body>' +
-          content + 
+          content +
           '</body></html>';
       }
     };
@@ -157,12 +156,11 @@ function xmaze(style){
       cleanData = this.data;
     }
     console.log(cleanData);
-    
 
     try {
 
       var jsonObj = JSON.parse(cleanData);
-      if ( jsonObj ) {        
+      if ( jsonObj ) {
         outputDoc = this.jsonFormatter.jsonToHTML(jsonObj, callback, this.uri);
       } else {
         throw "There was no object!";
@@ -173,10 +171,10 @@ function xmaze(style){
     }
 
 
-    var links = '<link rel="stylesheet" type="text/css" href="'+style+"/style.css"+'">' + 
+    var links = '<link rel="stylesheet" type="text/css" href="'+style+"/style.css"+'">' +
                 '<script type="text/javascript" src="'+style+"/style.js"+'"></script>';
     document.body.innerHTML = links + outputDoc;
-    
+
   }
   else {
     console.log("JSONView: this is not json, not formatting.");
