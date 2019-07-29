@@ -34,6 +34,22 @@
                         "http://www.pythonchallenge.com/pc/def/map.jpg"
                     ],
                     "key": "ocr",
+                    "redirect": "/room/neworld"
+                }
+            ]
+        },
+        {
+            "name": "neworld",
+            "tex": "https://cdn.pizap.com/pizapfiles/images/photo_backgrounds_textures_app04.jpg",
+            "seq": ["back"],
+            "items": [
+                "https://www.w3schools.com/tags/movie.mp4"
+            ],
+            "doors": [
+                {
+                    "name": "home",
+                    "task": "1+2=?",
+                    "key": "2",
                     "redirect": "/room/home"
                 }
             ]

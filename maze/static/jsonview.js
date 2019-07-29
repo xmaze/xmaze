@@ -203,6 +203,11 @@ function xmaze(style){
           itemsHtml += '<img src="'+item+'">';
           itemsHtml += '</li>';
         }
+        else if ( (itemType === "string") && ( item.endsWith('.mp4') || item.endsWith('.ogg') || item.endsWith('.webm')  ) ) {
+          itemsHtml += '<video width="640" height="480" controls>';
+          itemsHtml += '<source src="'+item+'" type="video/mp4">';
+          itemsHtml += '</video>';
+        }
         else {
           itemsHtml += '<li class="item">';
           itemsHtml += '<pre>'+item+'</pre>';
