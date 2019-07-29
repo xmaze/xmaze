@@ -57,7 +57,7 @@ li:last-child:after {
 }
 
 .errormessage {
-  font-family: monospace;  
+  font-family: monospace;
 }
 
 #json {
@@ -83,4 +83,24 @@ h1 {
 .callback {
   font-family: monospace;
   color: #A52A2A;
+}
+
+#items {
+  display: block;
+  margin-top: 1em;
+  border-width: thin;
+  border-color: white;
+  border-style: dashed;
+}
+
+.item {
+  display: block;
+  margin-top: 1em;
+  border-width: thin;
+  border-color: white;
+  border-style: dotted;
+}
+
+li.item:after {
+  content: '';
 }

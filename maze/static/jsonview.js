@@ -170,10 +170,41 @@ function xmaze(style){
       outputDoc = this.jsonFormatter.errorPage(e, this.data, this.uri);
     }
 
+    // TBD: Support more types. Currently only images.
+    var items = '';
+
+    if (typeof jsonObj !== 'undefined') {
+
+      var spacetype = 'room';
+      if ('door' in jsonObj) {
+        spacetype = 'door';
+      }
+
+      var itemsHtml = '';
+      for ( var itemId in jsonObj[spacetype]['items'] ) {
+
+        var item = jsonObj[spacetype]['items'][itemId];
+        var itemType = typeof item;
+
+        if ( (itemType === "string") && ( item.endsWith('.jpg') || item.endsWith('.jpeg') || item.endsWith('.png') || item.endsWith('.webp')  ) ) {
+          itemsHtml += '<li class="item">';
+          itemsHtml += '<img src="'+item+'">';
+          itemsHtml += '</li>';
+        }
+        else {
+          itemsHtml += '<li class="item">';
+          itemsHtml += '<pre>'+item+'</pre>';
+          itemsHtml += '</li>';
+        }
+      }
+
+      items = '<div id="items"><ul>'+itemsHtml+'</ul></div>';
+    }
 
     var links = '<link rel="stylesheet" type="text/css" href="'+style+"/style.css"+'">' +
                 '<script type="text/javascript" src="'+style+"/style.js"+'"></script>';
-    document.body.innerHTML = links + outputDoc;
+
+    document.body.innerHTML = links + outputDoc + items;
 
   }
   else {

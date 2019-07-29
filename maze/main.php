@@ -63,20 +63,29 @@ if (isset($routes[2])) {
 
 
 if ($format === "json") {
+    // For programmatic clients.
+    //
+
     header('Content-Type: application/json');
     echo json_encode($result);
-} else {
 
-    // Display texture as background, if exists :)
-    $tex = NULL;
+} else {
+    // For human eyes.
+    //
+
+    unset($result["room"]["seq"]);
+
     if (isset($result["room"])) {
         $tex = $result["room"]["tex"];
         unset($result["room"]["tex"]);
+
     }
+
     else if (isset($result["door"])) {
         $tex = $result["door"]->tex;
         unset($result["door"]->tex);
     }
+
 
     echo "
         <html>
