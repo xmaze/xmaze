@@ -160,8 +160,19 @@ function xmaze(style){
     try {
 
       var jsonObj = JSON.parse(cleanData);
+
       if ( jsonObj ) {
-        outputDoc = this.jsonFormatter.jsonToHTML(jsonObj, callback, this.uri);
+
+        // Do not display items for EYES, because, lookup for X781 below.
+        var itemlessObj = JSON.parse(JSON.stringify(jsonObj));
+        if (itemlessObj.room) {
+            delete itemlessObj.room.items;
+        }
+        if (itemlessObj.door) {
+            delete itemlessObj.door.items;
+        }
+
+        outputDoc = this.jsonFormatter.jsonToHTML(itemlessObj, callback, this.uri);
       } else {
         throw "There was no object!";
       }
@@ -170,6 +181,7 @@ function xmaze(style){
       outputDoc = this.jsonFormatter.errorPage(e, this.data, this.uri);
     }
 
+    // X781: For EYES, display the items rendered.
     // TBD: Support more types. Currently only images.
     var items = '';
 
