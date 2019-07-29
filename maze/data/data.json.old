@@ -1,0 +1,67 @@
+{
+    "rooms": [
+        {
+            "name": "sample",
+            "tex": "http://groovemechanic.net/three.js/examples/textures/brick_diffuse.jpg",
+            "seq": ["top", "left"],
+            "doors": [
+                {
+                    "name": "demo",
+                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/success",
+                    "hint": "Try appending ?key=2 to the URL."
+                },
+                {
+                    "name": "test",
+                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
+                    "task": "1+4=?",
+                    "key": "5",
+                    "redirect": "/room/test",
+                    "hint": "Try appending ?key=5 to the URL."
+                }
+            ]
+        },
+        {
+            "name": "success",
+            "tex": "http://groovemechanic.net/three.js/examples/textures/disturb.jpg",
+            "hint": "You had successfully arrived~!",
+            "seq":  ["right", "front"],
+            "doors": [
+                {
+                    "name": "is",
+                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
+                    "task": "1+2=?",
+                    "key": "3",
+                    "redirect": "/room/sample",
+                    "hint": "Try appending ?key=3 to the URL."
+                },
+                {
+                    "name": "this",
+                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
+                    "task": "2+2=?",
+                    "key": "4",
+                    "redirect": "https://github.com/mindey/xmaze",
+                    "hint": "Try appending ?key=4 to the URL."
+                }
+            ]
+        },
+        {
+            "name": "test",
+            "tex": "http://groovemechanic.net/three.js/examples/textures/roughness_map.jpg",
+            "hint": "try to enter door",
+            "seq": ["top"],
+            "doors": [
+                {
+                    "name": "are",
+                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
+                    "task": "5+1=?",
+                    "key": "6",
+                    "redirect": "https://github.com/javraindawn",
+                    "hint": "Try appending ?key=6 to the URL."
+                }
+            ]
+        }
+    ]
+}
