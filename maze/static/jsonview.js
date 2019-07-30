@@ -198,7 +198,7 @@ function xmaze(style){
         var item = jsonObj[spacetype]['items'][itemId];
         var itemType = typeof item;
 
-        if ( (itemType === "string") && ( item.endsWith('.jpg') || item.endsWith('.jpeg') || item.endsWith('.png') || item.endsWith('.webp')  ) ) {
+        if ( (itemType === "string") && ( item.endsWith('.jpg') || item.endsWith('.jpeg') || item.endsWith('.png') || item.endsWith('.webp') || item.endsWith('.gif')  ) ) {
           itemsHtml += '<li class="item">';
           itemsHtml += '<img src="'+item+'">';
           itemsHtml += '</li>';

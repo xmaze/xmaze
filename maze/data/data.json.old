@@ -2,66 +2,233 @@
     "rooms": [
         {
             "name": "sample",
-            "tex": "http://groovemechanic.net/three.js/examples/textures/brick_diffuse.jpg",
-            "seq": ["top", "left"],
+            "seq": ["up", "down", "left", "right", "back", "forward"],
             "doors": [
                 {
-                    "name": "demo",
-                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
+                    "name": "red",
                     "task": "1+1=?",
                     "key": "2",
-                    "redirect": "/room/success",
-                    "hint": "Try appending ?key=2 to the URL."
+                    "redirect": "/room/redhouse"
                 },
                 {
-                    "name": "test",
-                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
-                    "task": "1+4=?",
+                    "name": "green",
+                    "task": "2+1=?",
+                    "key": "3",
+                    "redirect": "/room/greenhouse"
+                },
+                {
+                    "name": "blue",
+                    "task": "2+3=?",
                     "key": "5",
-                    "redirect": "/room/test",
-                    "hint": "Try appending ?key=5 to the URL."
+                    "redirect": "/room/bluehouse"
+                },
+                {
+                    "name": "yellow",
+                    "task": "3+5=?",
+                    "key": "8",
+                    "redirect": "/room/yellowhouse"
+                },
+                {
+                    "name": "orange",
+                    "task": "5+8=?",
+                    "key": "13",
+                    "redirect": "/room/orangehouse"
+                },
+                {
+                    "name": "violet",
+                    "task": "8+13=?",
+                    "key": "21",
+                    "redirect": "/room/violethouse"
                 }
             ]
         },
         {
-            "name": "success",
-            "tex": "http://groovemechanic.net/three.js/examples/textures/disturb.jpg",
-            "hint": "You had successfully arrived~!",
-            "seq":  ["right", "front"],
+            "name": "redhouse",
+            "seq": ["down", "up"],
             "doors": [
                 {
-                    "name": "is",
-                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
-                    "task": "1+2=?",
-                    "key": "3",
-                    "redirect": "/room/sample",
-                    "hint": "Try appending ?key=3 to the URL."
+                    "name": "redhouse",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
                 },
                 {
-                    "name": "this",
-                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
+                    "name": "sunhouse",
+                    "task": "0+0=?",
+                    "key": "0",
+                    "redirect": "/room/sun"
+                }
+            ]
+        },
+        {
+            "name": "sun",
+            "seq": ["down", "up"],
+            "doors": [
+                {
+                    "name": "tored",
+                    "task": "0+0=?",
+                    "key": "0",
+                    "redirect": "/room/redhouse"
+                },
+                {
+                    "name": "tostar",
+                    "task": "1+0=?",
+                    "key": "1",
+                    "redirect": "/room/star"
+                }
+            ]
+        },
+        {
+            "name": "star",
+            "seq": ["down"],
+            "doors": [
+                {
+                    "name": "tosun",
+                    "task": "1+0=?",
+                    "key": "1",
+                    "redirect": "/room/sun"
+                }
+            ]
+        },
+
+
+        {
+            "name": "greenhouse",
+            "seq": ["up", "left", "right", "back", "forward"],
+            "doors": [
+                {
+                    "name": "sample",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                },
+
+
+                {
+                    "name": "serene",
                     "task": "2+2=?",
                     "key": "4",
-                    "redirect": "https://github.com/mindey/xmaze",
-                    "hint": "Try appending ?key=4 to the URL."
+                    "redirect": "/room/serenehouse"
+                },
+                {
+                    "name": "starship",
+                    "task": "3+3=?",
+                    "key": "6",
+                    "redirect": "/room/starshiphouse"
+                },
+                {
+                    "name": "disco",
+                    "task": "4+4=?",
+                    "key": "8",
+                    "redirect": "/room/discohouse"
+                },
+                {
+                    "name": "frost",
+                    "task": "5+5=?",
+                    "key": "10",
+                    "redirect": "/room/frosthouse"
                 }
             ]
         },
         {
-            "name": "test",
-            "tex": "http://groovemechanic.net/three.js/examples/textures/roughness_map.jpg",
-            "hint": "try to enter door",
-            "seq": ["top"],
+            "name": "bluehouse",
+            "seq": ["right"],
             "doors": [
                 {
-                    "name": "are",
-                    "tex": "http://groovemechanic.net/three.js/examples/textures/hardwood2_diffuse.jpg",
-                    "task": "5+1=?",
+                    "name": "sample",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+        {
+            "name": "yellowhouse",
+            "seq": ["left"],
+            "doors": [
+                {
+                    "name": "sample",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+        {
+            "name": "orangehouse",
+            "seq": ["forward"],
+            "doors": [
+                {
+                    "name": "sample",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+        {
+            "name": "violethouse",
+            "seq": ["back"],
+            "doors": [
+                {
+                    "name": "sample",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/sample"
+                }
+            ]
+        },
+
+
+        {
+            "name": "serenehouse",
+            "seq": ["right"],
+            "doors": [
+                {
+                    "name": "green",
+                    "task": "2+2=?",
+                    "key": "4",
+                    "redirect": "/room/greenhouse"
+                }
+            ]
+        },
+        {
+            "name": "starshiphouse",
+            "seq": ["left"],
+            "doors": [
+                {
+                    "name": "green",
+                    "task": "3+3=?",
                     "key": "6",
-                    "redirect": "https://github.com/javraindawn",
-                    "hint": "Try appending ?key=6 to the URL."
+                    "redirect": "/room/greenhouse"
+                }
+            ]
+        },
+        {
+            "name": "discohouse",
+            "seq": ["forward"],
+            "doors": [
+                {
+                    "name": "green",
+                    "task": "4+4=?",
+                    "key": "8",
+                    "redirect": "/room/greenhouse"
+                }
+            ]
+        },
+        {
+            "name": "frosthouse",
+            "seq": ["back"],
+            "doors": [
+                {
+                    "name": "green",
+                    "task": "5+5=?",
+                    "key": "10",
+                    "redirect": "/room/greenhouse"
                 }
             ]
         }
+
+
     ]
 }

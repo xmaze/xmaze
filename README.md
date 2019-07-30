@@ -3,11 +3,11 @@ A collaborative effort to create *structured data* about **secret, locked locati
 
 **To play:**
 
-Visit my maze at: [http://maze.mindey.com](http://maze.mindey.com).
+Visit my maze at: [http://xmaze.mindey.com](http://xmaze.mindey.com).
 
 **To start your own:**
 
-Demo [youtube video](https://youtu.be/U2sRVHSqhGY), alternatively: [mp4 (13.5MB)](http://maze.mindey.com/room/main/video.mp4).
+Demo [youtube video](), alternatively: [mp4 (13.5MB)]().
 
 ```
 git clone https://github.com/mindey/xmaze.git xmaze
@@ -28,12 +28,14 @@ Note: you might need to add the following **.htaccess** file to directory:
 Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [QSA,L] 
+RewriteRule ^ index.php [QSA,L]
 ```
 
 ## Secret Locked Locations
 
 The goal is to introduce content to learners, students, etc. by enciting them to solve problems in order to reveal secrets. I call the format for rooms and doors between them, defining a maze, a ``zone``. Below is the beginning for a schema definition for secret locked locations.
+
+Difference between room and door, is that rooms provide rewards, and doors provide challenges.
 
 **room**
 ```{json}
