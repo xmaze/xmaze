@@ -7,7 +7,7 @@ Visit my maze at: [http://xmaze.mindey.com](http://xmaze.mindey.com).
 
 **To start your own:**
 
-Demo [youtube video](), alternatively: [mp4 (13.5MB)]().
+Demo [youtube video](https://youtu.be/VCb7PpFJIj0), alternatively: [mp4 (115MB)](https://wiki.mindey.com/shared/shots/e7291ca09c793319c893a9dd1-xmaze-intro.mp4).
 
 ```
 git clone https://github.com/mindey/xmaze.git xmaze
