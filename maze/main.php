@@ -73,7 +73,8 @@ if ($format === "json") {
     // For human eyes.
     //
 
-    unset($result["room"]["seq"]);
+    // For now, leave sequences, not to confuse developments. :)
+    // unset($result["room"]["seq"]);
 
     $tex = NULL;
 
