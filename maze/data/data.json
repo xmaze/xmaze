@@ -2,7 +2,7 @@
     "rooms": [
         {
             "name": "home",
-            "seq": ["up", "down", "left", "right", "back", "forward"],
+            "seq": ["down", "left"],
             "doors": [
                 {
                     "name": "red",
@@ -11,224 +11,36 @@
                     "redirect": "/room/redhouse"
                 },
                 {
-                    "name": "green",
-                    "task": "2+1=?",
-                    "key": "3",
-                    "redirect": "/room/greenhouse"
-                },
-                {
-                    "name": "blue",
-                    "task": "2+3=?",
-                    "key": "5",
-                    "redirect": "/room/bluehouse"
-                },
-                {
                     "name": "yellow",
-                    "task": "3+5=?",
-                    "key": "8",
-                    "redirect": "/room/yellowhouse"
-                },
-                {
-                    "name": "orange",
-                    "task": "5+8=?",
-                    "key": "13",
-                    "redirect": "/room/orangehouse"
-                },
-                {
-                    "name": "violet",
-                    "task": "8+13=?",
-                    "key": "21",
-                    "redirect": "/room/violethouse"
+                    "task": "1+2=?",
+                    "key": "3",
+                    "redirect": "/room/newhouse"
                 }
             ]
         },
         {
             "name": "redhouse",
-            "seq": ["down", "up"],
-            "doors": [
-                {
-                    "name": "redhouse",
-                    "task": "1+1=?",
-                    "key": "2",
-                    "redirect": "/room/home"
-                },
-                {
-                    "name": "sunhouse",
-                    "task": "0+0=?",
-                    "key": "0",
-                    "redirect": "/room/sun"
-                }
-            ]
-        },
-        {
-            "name": "sun",
-            "seq": ["down", "up"],
-            "doors": [
-                {
-                    "name": "tored",
-                    "task": "0+0=?",
-                    "key": "0",
-                    "redirect": "/room/redhouse"
-                },
-                {
-                    "name": "tostar",
-                    "task": "1+0=?",
-                    "key": "1",
-                    "redirect": "/room/star"
-                }
-            ]
-        },
-        {
-            "name": "star",
-            "seq": ["down"],
-            "doors": [
-                {
-                    "name": "tosun",
-                    "task": "1+0=?",
-                    "key": "1",
-                    "redirect": "/room/sun"
-                }
-            ]
-        },
-
-
-        {
-            "name": "greenhouse",
-            "seq": ["up", "left", "right", "back", "forward"],
+            "seq": ["up"],
             "doors": [
                 {
                     "name": "home",
                     "task": "1+1=?",
                     "key": "2",
                     "redirect": "/room/home"
-                },
-
-
-                {
-                    "name": "serene",
-                    "task": "2+2=?",
-                    "key": "4",
-                    "redirect": "/room/serenehouse"
-                },
-                {
-                    "name": "starship",
-                    "task": "3+3=?",
-                    "key": "6",
-                    "redirect": "/room/starshiphouse"
-                },
-                {
-                    "name": "disco",
-                    "task": "4+4=?",
-                    "key": "8",
-                    "redirect": "/room/discohouse"
-                },
-                {
-                    "name": "frost",
-                    "task": "5+5=?",
-                    "key": "10",
-                    "redirect": "/room/frosthouse"
                 }
             ]
         },
         {
-            "name": "bluehouse",
+            "name": "newhouse",
             "seq": ["right"],
             "doors": [
                 {
                     "name": "home",
-                    "task": "1+1=?",
-                    "key": "2",
+                    "task": "1+2=?",
+                    "key": "3",
                     "redirect": "/room/home"
-                }
-            ]
-        },
-        {
-            "name": "yellowhouse",
-            "seq": ["left"],
-            "doors": [
-                {
-                    "name": "home",
-                    "task": "1+1=?",
-                    "key": "2",
-                    "redirect": "/room/home"
-                }
-            ]
-        },
-        {
-            "name": "orangehouse",
-            "seq": ["forward"],
-            "doors": [
-                {
-                    "name": "home",
-                    "task": "1+1=?",
-                    "key": "2",
-                    "redirect": "/room/home"
-                }
-            ]
-        },
-        {
-            "name": "violethouse",
-            "seq": ["back"],
-            "doors": [
-                {
-                    "name": "home",
-                    "task": "1+1=?",
-                    "key": "2",
-                    "redirect": "/room/home"
-                }
-            ]
-        },
-
-
-        {
-            "name": "serenehouse",
-            "seq": ["right"],
-            "doors": [
-                {
-                    "name": "green",
-                    "task": "2+2=?",
-                    "key": "4",
-                    "redirect": "/room/greenhouse"
-                }
-            ]
-        },
-        {
-            "name": "starshiphouse",
-            "seq": ["left"],
-            "doors": [
-                {
-                    "name": "green",
-                    "task": "3+3=?",
-                    "key": "6",
-                    "redirect": "/room/greenhouse"
-                }
-            ]
-        },
-        {
-            "name": "discohouse",
-            "seq": ["forward"],
-            "doors": [
-                {
-                    "name": "green",
-                    "task": "4+4=?",
-                    "key": "8",
-                    "redirect": "/room/greenhouse"
-                }
-            ]
-        },
-        {
-            "name": "frosthouse",
-            "seq": ["back"],
-            "doors": [
-                {
-                    "name": "green",
-                    "task": "5+5=?",
-                    "key": "10",
-                    "redirect": "/room/greenhouse"
                 }
             ]
         }
-
-
     ]
 }
