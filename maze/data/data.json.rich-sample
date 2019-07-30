@@ -1,0 +1,74 @@
+{
+    "rooms": [
+        {
+            "tex": "",
+            "name": "home",
+            "hint": "Click a door to get challenged... (pass ?format=json for more details)",
+            "seq": ["forward"],
+            "items": [
+                "https://wiki.mindey.com/shared/starry.gif",
+                "TBD: https://wiki.mindey.com/shared/objs/cube.gltf"
+            ],
+            "doors": [
+                {
+                    "name": "initial",
+                    "task": "9^9=?",
+                    "tex": "",
+                    "hint": "Try to change the URL address... (use '?key=' as parameter)",
+                    "key": "387420489",
+                    "items": [
+                        "https://wiki.mindey.com/shared/riddle.jpg",
+                        "https://www.w3schools.com/html/mov_bbb.mp4"
+                    ],
+                    "redirect": "/room/map"
+                }
+            ]
+        },
+        {
+            "name": "map",
+            "tex": "https://i.pinimg.com/474x/85/01/4e/85014ea8eae534bbf092209db6ef2f7d--marble-floor-marble-tiles.jpg",
+            "seq": ["back", "up"],
+            "items": [
+                "https://animemotivation.com/wp-content/uploads/2018/08/happy-anime-girl-cute-wallpaper.jpg.webp"
+            ],
+            "message": "Rooms with happy rewards! Continue exploring!",
+            "doors": [
+                {
+                    "name": "hbvfpzroflpfqv",
+                    "task": "pl, f elmb vlr afak'q al qefp yv exka, qexq'p texq zljmrqbop xob clo, xka qexq'p tev qefp pqofkd fp pl ilkd. vlr'ob xijlpq ebob. klt, xmmiv qexq ql qeb roi.",
+                    "hint": "everybody thinks trice before solving this.",
+                    "items": [
+                        "https://wiki.mindey.com/shared/game/map.jpg"
+                    ],
+                    "key": "curiosity",
+                    "redirect": "/room/neworld"
+                },
+                {
+                    "name": "testdoor",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/testroom"
+                }
+            ]
+        },
+        {
+            "name": "neworld",
+            "tex": "https://cdn.pizap.com/pizapfiles/images/photo_backgrounds_textures_app04.jpg",
+            "seq": ["back"],
+            "items": [
+                "https://www.w3schools.com/tags/movie.mp4"
+            ],
+            "doors": [
+                {
+                    "name": "home",
+                    "task": "1+2=?",
+                    "key": "2",
+                    "redirect": "/room/home"
+                }
+            ]
+        },
+        {
+            "name": "testroom"
+        }
+    ]
+}

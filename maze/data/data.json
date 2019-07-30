@@ -1,63 +1,234 @@
 {
     "rooms": [
         {
-            "tex": "",
             "name": "home",
-            "hint": "Click a door to get challenged... (pass ?format=json for more details)",
-            "seq": ["forward"],
-            "items": [
-                "https://wiki.mindey.com/shared/starry.gif",
-                "TBD: https://wiki.mindey.com/shared/objs/cube.gltf"
-            ],
+            "seq": ["up", "down", "left", "right", "back", "forward"],
             "doors": [
                 {
-                    "name": "initial",
-                    "task": "9^9=?",
-                    "hint": "Try to change the URL address... (use '?key=' as parameter)",
-                    "key": "387420489",
-                    "items": [
-                        "https://wiki.mindey.com/shared/riddle.jpg"
-                    ],
-                    "redirect": "/room/map"
+                    "name": "red",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/redhouse"
+                },
+                {
+                    "name": "green",
+                    "task": "2+1=?",
+                    "key": "3",
+                    "redirect": "/room/greenhouse"
+                },
+                {
+                    "name": "blue",
+                    "task": "2+3=?",
+                    "key": "5",
+                    "redirect": "/room/bluehouse"
+                },
+                {
+                    "name": "yellow",
+                    "task": "3+5=?",
+                    "key": "8",
+                    "redirect": "/room/yellowhouse"
+                },
+                {
+                    "name": "orange",
+                    "task": "5+8=?",
+                    "key": "13",
+                    "redirect": "/room/orangehouse"
+                },
+                {
+                    "name": "violet",
+                    "task": "8+13=?",
+                    "key": "21",
+                    "redirect": "/room/violethouse"
                 }
             ]
         },
         {
-            "name": "map",
-            "tex": "https://i.pinimg.com/474x/85/01/4e/85014ea8eae534bbf092209db6ef2f7d--marble-floor-marble-tiles.jpg",
-            "seq": ["back"],
-            "items": [
-                "https://animemotivation.com/wp-content/uploads/2018/08/happy-anime-girl-cute-wallpaper.jpg.webp"
-            ],
-            "message": "Rooms with happy rewards! Continue exploring!",
+            "name": "redhouse",
+            "seq": ["down", "up"],
             "doors": [
                 {
-                    "name": "hbvfpzroflpfqv",
-                    "task": "pl, f elmb vlr afak'q al qefp yv exka, qexq'p texq zljmrqbop xob clo, xka qexq'p tev qefp pqofkd fp pl ilkd. vlr'ob xijlpq ebob. klt, xmmiv qexq ql qeb roi.",
-                    "hint": "everybody thinks trice before solving this.",
-                    "items": [
-                        "https://wiki.mindey.com/shared/game/map.jpg"
-                    ],
-                    "key": "curiosity",
-                    "redirect": "/room/neworld"
+                    "name": "redhouse",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/home"
+                },
+                {
+                    "name": "sunhouse",
+                    "task": "0+0=?",
+                    "key": "0",
+                    "redirect": "/room/sun"
                 }
             ]
         },
         {
-            "name": "neworld",
-            "tex": "https://cdn.pizap.com/pizapfiles/images/photo_backgrounds_textures_app04.jpg",
-            "seq": ["back"],
-            "items": [
-                "https://www.w3schools.com/tags/movie.mp4"
-            ],
+            "name": "sun",
+            "seq": ["down", "up"],
+            "doors": [
+                {
+                    "name": "tored",
+                    "task": "0+0=?",
+                    "key": "0",
+                    "redirect": "/room/redhouse"
+                },
+                {
+                    "name": "tostar",
+                    "task": "1+0=?",
+                    "key": "1",
+                    "redirect": "/room/star"
+                }
+            ]
+        },
+        {
+            "name": "star",
+            "seq": ["down"],
+            "doors": [
+                {
+                    "name": "tosun",
+                    "task": "1+0=?",
+                    "key": "1",
+                    "redirect": "/room/sun"
+                }
+            ]
+        },
+
+
+        {
+            "name": "greenhouse",
+            "seq": ["up", "left", "right", "back", "forward"],
             "doors": [
                 {
                     "name": "home",
-                    "task": "1+2=?",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/home"
+                },
+
+
+                {
+                    "name": "serene",
+                    "task": "2+2=?",
+                    "key": "4",
+                    "redirect": "/room/serenehouse"
+                },
+                {
+                    "name": "starship",
+                    "task": "3+3=?",
+                    "key": "6",
+                    "redirect": "/room/starshiphouse"
+                },
+                {
+                    "name": "disco",
+                    "task": "4+4=?",
+                    "key": "8",
+                    "redirect": "/room/discohouse"
+                },
+                {
+                    "name": "frost",
+                    "task": "5+5=?",
+                    "key": "10",
+                    "redirect": "/room/frosthouse"
+                }
+            ]
+        },
+        {
+            "name": "bluehouse",
+            "seq": ["right"],
+            "doors": [
+                {
+                    "name": "home",
+                    "task": "1+1=?",
                     "key": "2",
                     "redirect": "/room/home"
                 }
             ]
+        },
+        {
+            "name": "yellowhouse",
+            "seq": ["left"],
+            "doors": [
+                {
+                    "name": "home",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/home"
+                }
+            ]
+        },
+        {
+            "name": "orangehouse",
+            "seq": ["forward"],
+            "doors": [
+                {
+                    "name": "home",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/home"
+                }
+            ]
+        },
+        {
+            "name": "violethouse",
+            "seq": ["back"],
+            "doors": [
+                {
+                    "name": "home",
+                    "task": "1+1=?",
+                    "key": "2",
+                    "redirect": "/room/home"
+                }
+            ]
+        },
+
+
+        {
+            "name": "serenehouse",
+            "seq": ["right"],
+            "doors": [
+                {
+                    "name": "green",
+                    "task": "2+2=?",
+                    "key": "4",
+                    "redirect": "/room/greenhouse"
+                }
+            ]
+        },
+        {
+            "name": "starshiphouse",
+            "seq": ["left"],
+            "doors": [
+                {
+                    "name": "green",
+                    "task": "3+3=?",
+                    "key": "6",
+                    "redirect": "/room/greenhouse"
+                }
+            ]
+        },
+        {
+            "name": "discohouse",
+            "seq": ["forward"],
+            "doors": [
+                {
+                    "name": "green",
+                    "task": "4+4=?",
+                    "key": "8",
+                    "redirect": "/room/greenhouse"
+                }
+            ]
+        },
+        {
+            "name": "frosthouse",
+            "seq": ["back"],
+            "doors": [
+                {
+                    "name": "green",
+                    "task": "5+5=?",
+                    "key": "10",
+                    "redirect": "/room/greenhouse"
+                }
+            ]
         }
+
+
     ]
 }

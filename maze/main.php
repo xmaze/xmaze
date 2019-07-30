@@ -75,15 +75,21 @@ if ($format === "json") {
 
     unset($result["room"]["seq"]);
 
+    $tex = NULL;
+
     if (isset($result["room"])) {
-        $tex = $result["room"]["tex"];
-        unset($result["room"]["tex"]);
+        if (array_key_exists("tex", $result["room"])) {
+            $tex = $result["room"]["tex"];
+            unset($result["room"]["tex"]);
+        }
 
     }
 
     else if (isset($result["door"])) {
-        $tex = $result["door"]->tex;
-        unset($result["door"]->tex);
+        if (array_key_exists("tex", $result["door"])) {
+            $tex = $result["door"]->tex;
+            unset($result["door"]->tex);
+        }
     }
 
 
