@@ -3,7 +3,7 @@ A collaborative effort to create *structured data* about **secret, locked locati
 
 **To play:**
 
-Visit my maze at: [http://xmaze.mindey.com](http://xmaze.mindey.com).
+Visit my maze at: [http://maze.mindey.com](http://maze.mindey.com).
 
 **To start your own:**
 
