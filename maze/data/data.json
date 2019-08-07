@@ -2,42 +2,80 @@
     "rooms": [
         {
             "name": "home",
-            "seq": ["down", "left"],
+            "hint": "Click a door to get challenged... (pass ?format=json for more details)",
+            "seq": ["up", "down", "forward"],
+            "items": [
+                "https://wiki.mindey.com/shared/starry.gif"
+            ],
             "doors": [
                 {
-                    "name": "red",
-                    "task": "1+1=?",
-                    "key": "2",
-                    "redirect": "/room/redhouse"
+                    "name": "math",
+                    "task": "9^9=?",
+                    "tex": "",
+                    "hint": "Try to change the URL address... (use '?key=' as parameter)",
+                    "key": "387420489",
+                    "items": [
+                        "https://wiki.mindey.com/shared/riddle.jpg"
+                    ],
+                    "redirect": "/room/map"
                 },
                 {
-                    "name": "yellow",
+                    "name": "physics",
+                    "task": "9!=?",
+                    "tex": "https://wiki.mindey.com/shared/game/universe-particles.jpg",
+                    "hint": "Try to change the URL address... (use '?key=' as parameter)",
+            "items": [
+                "https://wiki.mindey.com/shared/shots/08f34de448fedeb43eb1606b9-symphony-of-science.mp4"
+            ],
+                    "key": "362880",
+                    "redirect": "/room/map"
+                },
+                {
+                    "name": "astronomy",
                     "task": "1+2=?",
+                    "tex": "",
+                    "hint": "Try to change the URL address... (use '?key=' as parameter)",
+            "items": [
+                "http://p3.pstatp.com/large/59330000ec481b0a0a5d.gif"
+            ],
                     "key": "3",
-                    "redirect": "/room/newhouse"
+                    "redirect": "/room/map"
                 }
             ]
         },
         {
-            "name": "redhouse",
-            "seq": ["up"],
+            "name": "map",
+            "tex": "https://i.pinimg.com/474x/85/01/4e/85014ea8eae534bbf092209db6ef2f7d--marble-floor-marble-tiles.jpg",
+            "seq": ["back"],
+            "items": [
+                "https://animemotivation.com/wp-content/uploads/2018/08/happy-anime-girl-cute-wallpaper.jpg.webp"
+            ],
+            "message": "Rooms with happy rewards! Continue exploring!",
+            "doors": [
+                {
+                    "name": "hbvfpzroflpfqv",
+                    "task": "pl, f elmb vlr afak'q al qefp yv exka, qexq'p texq zljmrqbop xob clo, xka qexq'p tev qefp pqofkd fp pl ilkd. vlr'ob xijlpq ebob. klt, xmmiv qexq ql qeb roi.",
+                    "hint": "everybody thinks trice before solving this.",
+                    "items": [
+                        "https://wiki.mindey.com/shared/game/map.jpg"
+                    ],
+                    "key": "curiosity",
+                    "redirect": "/room/neworld"
+                }
+            ]
+        },
+        {
+            "name": "neworld",
+            "tex": "https://cdn.pizap.com/pizapfiles/images/photo_backgrounds_textures_app04.jpg",
+            "seq": ["forward"],
+            "items": [
+                "https://www.w3schools.com/tags/movie.mp4"
+            ],
             "doors": [
                 {
                     "name": "home",
-                    "task": "1+1=?",
+                    "task": "1+2=?",
                     "key": "2",
-                    "redirect": "/room/home"
-                }
-            ]
-        },
-        {
-            "name": "newhouse",
-            "seq": ["right"],
-            "doors": [
-                {
-                    "name": "home",
-                    "task": "1+2=?",
-                    "key": "3",
                     "redirect": "/room/home"
                 }
             ]
