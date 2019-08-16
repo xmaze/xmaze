@@ -99,6 +99,9 @@ if ($format === "json") {
             <head>
                 <meta name='viewport' content='width=device-width'>
                 <script type='text/javascript' src='/static/jsonview.js'></script>
+                <!-- Support for inclusion of 3D models via https://googlewebcomponents.github.io/model-viewer/ -->
+                <script type='module' src='/static/extras/model-viewer.js'></script>
+                <script nomodule src='/static/extras/model-viewer-legacy.js'></script>
             </head>
             <body onload=\"xmaze('/static/default')\" background=\"$tex\">
                 <div id='zone'>

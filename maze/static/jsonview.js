@@ -184,6 +184,7 @@ function xmaze(style){
     // X781: For EYES, display the items rendered.
     // TBD: Support more types. Currently only images.
     var items = '';
+    var needs3D = false;
 
     if (typeof jsonObj !== 'undefined') {
 
@@ -207,6 +208,10 @@ function xmaze(style){
           itemsHtml += '<video width="640" height="480" controls>';
           itemsHtml += '<source src="'+item+'" type="video/mp4">';
           itemsHtml += '</video>';
+        }
+        else if ( (itemType === "string") && ( item.endsWith('.gltf') || item.endsWith('.glb')) ) {
+          needs3D = true;
+          itemsHtml += '<li class="item"><model-viewer src="/cors/?url='+item+'" alt="A 3D model" background-color="#70BCD1" shadow-intensity="1" camera-controls="" interaction-prompt="auto" auto-rotate="" ar="" magic-leap="" style="width: 640px; height: 480px" autoplay></model-viewer></li>';
         }
         else {
           itemsHtml += '<li class="item">';
