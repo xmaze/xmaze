@@ -10,6 +10,7 @@ function xmaze(style){
   var jsonp_regex = /^[\s\u200B\uFEFF]*([\w$\[\]\.]+)[\s\u200B\uFEFF]*\([\s\u200B\uFEFF]*([\[{][\s\S]*[\]}])[\s\u200B\uFEFF]*\);?[\s\u200B\uFEFF]*$/;
   var is_json = json_regex.test(this.data);
   var is_jsonp = jsonp_regex.test(this.data);
+  var bgsound = null;
 
   console.log("JSONView: is_json="+is_json+" is_jsonp="+is_jsonp);
 
@@ -132,6 +133,7 @@ function xmaze(style){
           '<link rel="stylesheet" type="text/css" href="'+style+"/style.css"+'">' +
           '<script type="text/javascript" src="'+style+"/style.js"+'"></script>' +
           '</head><body>' +
+          '<audio autoplay loop><source src="'+bgsound+'"></source></audio>' +
           content +
           '</body></html>';
       }
@@ -161,12 +163,24 @@ function xmaze(style){
 
       var jsonObj = JSON.parse(cleanData);
 
+      if (jsonObj.hasOwnProperty("room")) {
+        if (jsonObj["room"].hasOwnProperty("snd")) {
+            bgsound = jsonObj["room"]["snd"];
+        }
+      }
+      if (jsonObj.hasOwnProperty("door")) {
+        if (jsonObj["door"].hasOwnProperty("snd")) {
+            bgsound = jsonObj["door"]["snd"];
+        }
+      }
+
       if ( jsonObj ) {
 
         // Do not display items for EYES, because, lookup for X781 below.
         var itemlessObj = JSON.parse(JSON.stringify(jsonObj));
         if (itemlessObj.room) {
             delete itemlessObj.room.items;
+            delete itemlessObj.room.snd;
         }
         if (itemlessObj.door) {
             delete itemlessObj.door.items;

@@ -13,6 +13,7 @@
                 {
                     "name": "math",
                     "task": "9^9=?",
+                    "snd": "http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp3",
                     "tex": "",
                     "hint": "Try to change the URL address... (use '?key=' as parameter)",
                     "key": "387420489",
