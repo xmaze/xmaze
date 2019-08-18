@@ -3,17 +3,16 @@
         {
             "name": "home",
             "hint": "Click a door to get challenged... (pass ?format=json for more details)",
+            "tex": "https://i.stack.imgur.com/cGIFX.jpg",
             "seq": ["up", "down", "back"],
             "items": [
                 "https://wiki.mindey.com/shared/starry.gif",
-                "https://wiki.mindey.com/shared/docs/parrot.gltf",
-                "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb"
+                "http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp3"
             ],
             "doors": [
                 {
                     "name": "math",
                     "task": "9^9=?",
-                    "snd": "http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp3",
                     "tex": "",
                     "hint": "Try to change the URL address... (use '?key=' as parameter)",
                     "key": "387420489",
@@ -27,9 +26,9 @@
                     "task": "9!=?",
                     "tex": "https://wiki.mindey.com/shared/game/universe-particles.jpg",
                     "hint": "Try to change the URL address... (use '?key=' as parameter)",
-            "items": [
-                "https://wiki.mindey.com/shared/shots/08f34de448fedeb43eb1606b9-symphony-of-science.mp4"
-            ],
+                    "items": [
+                        "https://wiki.mindey.com/shared/shots/08f34de448fedeb43eb1606b9-symphony-of-science.mp4"
+                    ],
                     "key": "362880",
                     "redirect": "/room/map"
                 },
@@ -38,10 +37,32 @@
                     "task": "1+2=?",
                     "tex": "",
                     "hint": "Try to change the URL address... (use '?key=' as parameter)",
-            "items": [
-                "http://p3.pstatp.com/large/59330000ec481b0a0a5d.gif"
-            ],
+                    "items": [
+                        "http://p3.pstatp.com/large/59330000ec481b0a0a5d.gif"
+                    ],
                     "key": "3",
+                    "redirect": "/room/map"
+                },
+                {
+                    "name": "biology",
+                    "task": "4+5=?",
+                    "tex": "",
+                    "hint": "Try to change the URL address... (use '?key=' as parameter)",
+                    "items": [
+                        "https://wiki.mindey.com/shared/docs/parrot.gltf"
+                    ],
+                    "key": "9",
+                    "redirect": "/room/map"
+                },
+                {
+                    "name": "spaceflight",
+                    "task": "4-5=?",
+                    "tex": "",
+                    "hint": "Try to change the URL address... (use '?key=' as parameter)",
+                    "items": [
+                        "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb"
+                    ],
+                    "key": "-1",
                     "redirect": "/room/map"
                 }
             ]

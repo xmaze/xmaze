@@ -181,9 +181,11 @@ function xmaze(style){
         if (itemlessObj.room) {
             delete itemlessObj.room.items;
             delete itemlessObj.room.snd;
+            delete itemlessObj.room.seq;
         }
         if (itemlessObj.door) {
             delete itemlessObj.door.items;
+            delete itemlessObj.door.snd;
         }
 
         outputDoc = this.jsonFormatter.jsonToHTML(itemlessObj, callback, this.uri);
@@ -198,39 +200,46 @@ function xmaze(style){
     // X781: For EYES, display the items rendered.
     // TBD: Support more types. Currently only images.
     var items = '';
-    var needs3D = false;
+    var form = '';
 
     if (typeof jsonObj !== 'undefined') {
 
       var spacetype = 'room';
       if ('door' in jsonObj) {
         spacetype = 'door';
+        form = '<form method="get"><span class="prop" id="key">key:</span> <input type="text" name="key"> <input type="submit" value="try"></form>';
       }
 
       var itemsHtml = '';
-      for ( var itemId in jsonObj[spacetype]['items'] ) {
+      if (jsonObj[spacetype]) {
+        for ( var itemId in jsonObj[spacetype]['items'] ) {
 
-        var item = jsonObj[spacetype]['items'][itemId];
-        var itemType = typeof item;
+          var item = jsonObj[spacetype]['items'][itemId];
+          var itemType = typeof item;
 
-        if ( (itemType === "string") && ( item.endsWith('.jpg') || item.endsWith('.jpeg') || item.endsWith('.png') || item.endsWith('.webp') || item.endsWith('.gif')  ) ) {
-          itemsHtml += '<li class="item">';
-          itemsHtml += '<img src="'+item+'">';
-          itemsHtml += '</li>';
-        }
-        else if ( (itemType === "string") && ( item.endsWith('.mp4') || item.endsWith('.ogg') || item.endsWith('.webm')  ) ) {
-          itemsHtml += '<video width="640" height="480" controls>';
-          itemsHtml += '<source src="'+item+'" type="video/mp4">';
-          itemsHtml += '</video>';
-        }
-        else if ( (itemType === "string") && ( item.endsWith('.gltf') || item.endsWith('.glb')) ) {
-          needs3D = true;
-          itemsHtml += '<li class="item"><model-viewer src="/cors/?url='+item+'" alt="A 3D model" background-color="#70BCD1" shadow-intensity="1" camera-controls="" interaction-prompt="auto" auto-rotate="" ar="" magic-leap="" style="width: 640px; height: 480px" autoplay></model-viewer></li>';
-        }
-        else {
-          itemsHtml += '<li class="item">';
-          itemsHtml += '<pre>'+item+'</pre>';
-          itemsHtml += '</li>';
+          if ( (itemType === "string") && ( item.endsWith('.jpg') || item.endsWith('.jpeg') || item.endsWith('.png') || item.endsWith('.webp') || item.endsWith('.gif')  ) ) {
+            itemsHtml += '<li class="item">';
+            itemsHtml += '<img src="'+item+'">';
+            itemsHtml += '</li>';
+          }
+          else if ( (itemType === "string") && ( item.endsWith('.mp4') || item.endsWith('.ogg') || item.endsWith('.webm')  ) ) {
+            itemsHtml += '<li class="item"><video width="640" height="480" controls>';
+            itemsHtml += '<source src="'+item+'" type="video/mp4">';
+            itemsHtml += '</video></li>';
+          }
+          else if ( (itemType === "string") && ( item.endsWith('.mp3') ) ) {
+            itemsHtml += '<li class="item"><audio controls>';
+            itemsHtml += '<source src="'+item+'" type="audio/mpeg">';
+            itemsHtml += '</audio></li>';
+          }
+          else if ( (itemType === "string") && ( item.endsWith('.gltf') || item.endsWith('.glb')) ) {
+            itemsHtml += '<li class="item"><model-viewer src="/cors/?url='+item+'" alt="A 3D model" background-color="#70BCD1" shadow-intensity="1" camera-controls="" interaction-prompt="auto" auto-rotate="" ar="" magic-leap="" style="width: 640px; height: 480px" autoplay></model-viewer></li>';
+          }
+          else {
+            itemsHtml += '<li class="item">';
+            itemsHtml += '<pre>'+item+'</pre>';
+            itemsHtml += '</li>';
+          }
         }
       }
 
@@ -240,7 +249,7 @@ function xmaze(style){
     var links = '<link rel="stylesheet" type="text/css" href="'+style+"/style.css"+'">' +
                 '<script type="text/javascript" src="'+style+"/style.js"+'"></script>';
 
-    document.body.innerHTML = links + outputDoc + items;
+    document.body.innerHTML = form + links + outputDoc + items;
 
   }
   else {
