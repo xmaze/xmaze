@@ -207,7 +207,7 @@ function xmaze(style){
       var spacetype = 'room';
       if ('door' in jsonObj) {
         spacetype = 'door';
-        form = '<form method="get"><span class="prop" id="key">key:</span> <input type="text" name="key"> <input type="submit" value="try"></form>';
+        form = '<form method="get" autocomplete="off"><span class="prop" id="key">key:</span> <input type="text" name="key" autocomplete="off"> <input type="submit" value="try"></form>';
       }
 
       var itemsHtml = '';

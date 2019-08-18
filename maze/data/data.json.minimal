@@ -1,0 +1,20 @@
+{
+    "rooms": [
+        {
+            "name": "home",
+            "doors": [
+                {
+                    "name": "math",
+                    "task": "1+1=?",
+                    "hint": "Try to change the URL address...",
+                    "key": "2",
+                    "redirect": "/room/neworld"
+                }
+            ]
+        },
+        {
+            "name": "neworld",
+            "hint": "hello, to new world!"
+        }
+    ]
+}

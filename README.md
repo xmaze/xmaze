@@ -16,6 +16,30 @@ php -S localhost:8000 -t maze maze/index.php
 ```
 and visit [localhost:8000](http://localhost:8000) on your machine. Once satisfied, just sync it with some domain where PHP is available, for example, by:
 
+Replace `data.json` with fresh start, e.g.:
+```json
+{
+    "rooms": [
+        {
+            "name": "home",
+            "doors": [
+                {
+                    "name": "math",
+                    "task": "1+1=?",
+                    "hint": "Try to change the URL address...",
+                    "key": "2",
+                    "redirect": "/room/neworld"
+                }
+            ]
+        },
+        {
+            "name": "neworld",
+            "hint": "hello, to new world!"
+        }
+    ]
+}
+```
+
 **To publish:**
 ```
 rsync -aPzr /path/to/xmaze/maze/* --rsh='ssh -p22' user@host:/path/to/public_html/
