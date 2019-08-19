@@ -130,7 +130,71 @@ input[type=submit] {
   font-size: 1.1em;
 }
 
-#key {
+input[type=button] {
+  background-color: #606060;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   font-family: monospace;
   font-size: 1.1em;
+}
+
+.key {
+  font-weight: bold;
+  color: #eed1b3;
+  font-family: monospace;
+  font-size: 1.1em;
+}
+.value {
+  font-weight: normal;
+  color: #8f9d6a;
+  font-family: monospace;
+  font-size: 1.1em;
+}
+
+textarea {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 1.1em;
+  background-color: #202020;
+  color: #8f9d6a;
+  caret-color: #eed1b3;
+}
+
+[type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+[type="file"] + label {
+  background-color: #3090C7;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 1.1em;
+}
+
+#fileList li {
+  list-style: none;
+  padding: 10px;
+  margin: 20px 20px;
+  background: #f15d22;
+  background-color: #3090C7;
+  color: #202020;
+  font-family: monospace;
+  font-weight: bold;
+  border-radius: 5px;
 }
