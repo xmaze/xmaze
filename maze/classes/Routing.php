@@ -8,6 +8,9 @@ class Routing {
     public function __construct() {
         $this->uri = $_SERVER['REQUEST_URI'];
         $this->query_strings = array_key_exists('QUERY_STRING', $_SERVER) ? $_SERVER['QUERY_STRING'] : null;
+        $this->method = $_SERVER['REQUEST_METHOD'];
+        $this->contents = $_POST;
+        $this->postdata = $_FILES;
     }
 
     public function getUriTokens() {
@@ -28,6 +31,18 @@ class Routing {
 
     public function getRoutesArray() {
         return explode('/', $this->getCurrentUri());
+    }
+
+    public function getRequestMethod() {
+        return $this->method;
+    }
+
+    public function getPostVariables() {
+        return $this->contents;
+    }
+
+    public function getPostFiles() {
+        return $this->postdata;
     }
 
 }

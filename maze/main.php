@@ -17,6 +17,18 @@ $routing = new Routing();
 $rooms = new Rooms();
 $template = new Template();
 
+// -
+if ($routing->getRequestMethod() == 'POST') {
+    $contents = serialize($routing->getPostVariables());
+
+    $files = $routing->getPostFiles();
+    $data = print_r($files, TRUE);
+    $file = fopen("data.jpg","wb");
+    fwrite($file, $data);
+    fclose($file);
+}
+// -
+
 $routes = $routing->getRoutesArray();
 if ($routes[0] !== "room" || (isset($routes[2]) && $routes[2] !== "door") ) {
     reload();
