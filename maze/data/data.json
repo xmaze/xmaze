@@ -7,7 +7,8 @@
             "seq": ["up", "down", "back"],
             "items": [
                 "https://wiki.mindey.com/shared/starry.gif",
-                "http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp3"
+                "http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp3",
+                "https://mindey.com/world.pdf"
             ],
             "doors": [
                 {

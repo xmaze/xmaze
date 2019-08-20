@@ -207,7 +207,7 @@ function xmaze(style){
       var spacetype = 'room';
       if ('door' in jsonObj) {
         spacetype = 'door';
-        form = '<form method="get" autocomplete="off" id="getForm"><span class="key">key:</span> <input type="text" name="key" autocomplete="off"> <input type="submit" value="try"> <input type="button" value="answer" onclick="onclickAnswer();"></form><form method="post" style="display:none;" id="postForm"><div><span class="key" id="reply-to">from:</span> <input type="text" name="email" required> <input type="button" value="<< back" onclick="onclickBack();"></div><div><span class="key">to:</span> <span class="value">&lt;maze-owner&gt;</span></div><div><br><span class="key">message:</span></div><div><textarea name="text" rows="5" cols="60"> </textarea></div><div class="box"><span class="key">file:</span> <input type="file" name="file" id="file" multiple onchange="uploadList()" /><label for="file" class="btn-2">upload</label><span style="margin-left: 50px;"><input type="submit" value="send"></span></div><div id="fileList"></div></form>';
+        form = '<form method="get" autocomplete="off" id="getForm"><span class="key">key:</span> <input type="text" name="key" autocomplete="off"> <input type="submit" value="try"> <input type="button" value="answer" onclick="onclickAnswer();"></form><form method="POST" style="display:none;" id="postForm" enctype="multipart/form-data"><div><span class="key" id="reply-to">from:</span> <input type="text" name="email" required> <input type="button" value="<< back" onclick="onclickBack();"></div><div><span class="key">to:</span> <span class="value">&lt;maze-owner&gt;</span></div><div><br><span class="key">message:</span></div><div><textarea name="text" rows="5" cols="60"> </textarea></div><div class="box"><span class="key">file:</span> <input type="file" name="file" id="file" multiple onchange="uploadList()" /><label for="file">upload</label><span style="margin-left: 50px;"><input type="submit" value="send"></span></div><div id="fileList"></div></form>';
       }
 
       // Start form-related.
@@ -255,6 +255,11 @@ function xmaze(style){
           }
           else if ( (itemType === "string") && ( item.endsWith('.gltf') || item.endsWith('.glb')) ) {
             itemsHtml += '<li class="item"><model-viewer src="/cors/?url='+item+'" alt="A 3D model" background-color="#70BCD1" shadow-intensity="1" camera-controls="" interaction-prompt="auto" auto-rotate="" ar="" magic-leap="" style="width: 640px; height: 480px" autoplay></model-viewer></li>';
+          }
+          else if ( (itemType === "string") && ( item.endsWith('.pdf') ) ) {
+            itemsHtml += '<li class="item">';
+            itemsHtml += '<embed src="'+item+'" width="100%" height="100%">';
+            itemsHtml += '</li>';
           }
           else {
             itemsHtml += '<li class="item">';
