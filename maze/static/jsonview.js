@@ -254,7 +254,14 @@ function xmaze(style){
             itemsHtml += '</audio></li>';
           }
           else if ( (itemType === "string") && ( item.endsWith('.gltf') || item.endsWith('.glb')) ) {
-            itemsHtml += '<li class="item"><model-viewer src="/cors/?url='+item+'" alt="A 3D model" background-color="#70BCD1" shadow-intensity="1" camera-controls="" interaction-prompt="auto" auto-rotate="" ar="" magic-leap="" style="width: 640px; height: 480px" autoplay></model-viewer></li>';
+            if (item.startsWith('/static/media/')) {
+              var full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+              item = full + item;
+            }
+            else {
+              item = '/cors/?url=' + item;
+            }
+            itemsHtml += '<li class="item"><model-viewer src="'+item+'" alt="A 3D model" background-color="#70BCD1" shadow-intensity="1" camera-controls="" interaction-prompt="auto" auto-rotate="" ar="" magic-leap="" style="width: 640px; height: 480px" autoplay></model-viewer></li>';
           }
           else if ( (itemType === "string") && ( item.endsWith('.pdf') ) ) {
             itemsHtml += '<li class="item">';
