@@ -10,7 +10,7 @@ Visit my maze at: [http://maze.mindey.com](http://maze.mindey.com).
 Demo [youtube video](https://youtu.be/VCb7PpFJIj0), alternatively: [mp4 (115MB)](https://wiki.mindey.com/shared/shots/e7291ca09c793319c893a9dd1-xmaze-intro.mp4).
 
 ```
-git clone https://github.com/mindey/xmaze.git xmaze
+git clone --recursive https://github.com/mindey/xmaze.git xmaze
 cd xmaze
 php -S localhost:8000 -t maze maze/index.php
 ```

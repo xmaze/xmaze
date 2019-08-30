@@ -198,3 +198,11 @@ textarea {
   font-weight: bold;
   border-radius: 5px;
 }
+
+#linkTo3D {
+  background: rgba(255, 255, 255, 0.15);
+  color: #8f9d6a;
+  position: fixed;
+  right: 20px;
+  z-index: 101;
+}
