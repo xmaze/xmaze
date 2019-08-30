@@ -32,7 +32,12 @@
                     $url = $cwd.$url;
                 }
                 else {
-                    $url = $cwd.'/maze/'.$url;
+                    if (is_dir( 'maze' )) {
+                        $url = $cwd.'/maze/'.$url;
+                    }
+                    else {
+                        $url = $cwd.$url;
+                    }
                 }
             }
 
