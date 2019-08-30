@@ -4,6 +4,7 @@
 
     if (substr ($url, 0, 7) != "http://"
         && substr ($url, 0, 8) != "https://"
+        && substr ($url, 0, 8) != "/static/"
         && substr ($url, 0, 6) != "ftp://") {
         die("ERROR: The argument 'url' must be an absolute URL beginning with 'http://', 'https://', or 'ftp://'.");
     }
@@ -23,6 +24,18 @@
 
 
     function get($url) {
+
+            if (substr ($url, 0, 8) == "/static/") {
+                // just read from file and return:
+                $cwd = getcwd();
+                if (substr ($cwd, -5) == '/maze' ) {
+                    $url = $cwd.$url;
+                }
+                else {
+                    $url = $cwd.'/maze/'.$url;
+                }
+            }
+
             $contents = file_get_contents($url);
             if (strlen($contents) > 0) {
                 echo $contents;
